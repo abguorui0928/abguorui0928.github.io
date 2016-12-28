@@ -1,0 +1,801 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="maven,gradle," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="时下，Gradle项目构建越来越受欢迎，其灵活的配置确实要比maven强大，这里对比Maven与Gradle常用配置，以更快的掌握gradle，文章中的maven配置取材于我的开源项目fastdb，github地址：https://github.com/abguorui0928/fastdb
+工程配置Gradle工程配置apply plugin: &amp;apos;java&amp;apos;
+apply pl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven to gradle">
+<meta property="og:url" content="http://yoursite.com/2015/09/30/maven-to-gradle/index.html">
+<meta property="og:site_name" content="Guor小站">
+<meta property="og:description" content="时下，Gradle项目构建越来越受欢迎，其灵活的配置确实要比maven强大，这里对比Maven与Gradle常用配置，以更快的掌握gradle，文章中的maven配置取材于我的开源项目fastdb，github地址：https://github.com/abguorui0928/fastdb
+工程配置Gradle工程配置apply plugin: &amp;apos;java&amp;apos;
+apply pl">
+<meta property="og:updated_time" content="2016-12-28T05:49:47.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="maven to gradle">
+<meta name="twitter:description" content="时下，Gradle项目构建越来越受欢迎，其灵活的配置确实要比maven强大，这里对比Maven与Gradle常用配置，以更快的掌握gradle，文章中的maven配置取材于我的开源项目fastdb，github地址：https://github.com/abguorui0928/fastdb
+工程配置Gradle工程配置apply plugin: &amp;apos;java&amp;apos;
+apply pl">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/09/30/maven-to-gradle/"/>
+
+
+
+
+
+  <title> maven to gradle | Guor小站 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Guor小站</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/09/30/maven-to-gradle/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Guor">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Guor小站">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Guor小站" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                maven to gradle
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-09-30T13:53:47+08:00">
+                2015-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>时下，Gradle项目构建越来越受欢迎，其灵活的配置确实要比maven强大，这里对比Maven与Gradle常用配置，以更快的掌握gradle，文章中的maven配置取材于我的开源项目fastdb，github地址：<a href="https://github.com/abguorui0928/fastdb" target="_blank" rel="external">https://github.com/abguorui0928/fastdb</a></p>
+<h3 id="工程配置"><a href="#工程配置" class="headerlink" title="工程配置"></a>工程配置</h3><h4 id="Gradle工程配置"><a href="#Gradle工程配置" class="headerlink" title="Gradle工程配置"></a>Gradle工程配置</h4><pre><code>apply plugin: &apos;java&apos;
+apply plugin: &apos;idea&apos;
+apply plugin: &apos;application&apos;
+
+//default buildDir is build
+buildDir = &quot;target&quot;
+
+jar {
+    group = &apos;org.fastdb&apos;
+    baseName = &apos;fastdb&apos;
+    version = 0.1
+}
+</code></pre><p>执行gradle idea生成idea环境下工程配置文件</p>
+<h4 id="Maven工程配置"><a href="#Maven工程配置" class="headerlink" title="Maven工程配置"></a>Maven工程配置</h4><pre><code>&lt;project&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;org.fastdb&lt;/groupId&gt;
+    &lt;artifactId&gt;fastdb&lt;/artifactId&gt;
+    &lt;version&gt;0.1&lt;/version&gt;
+&lt;/project&gt;
+</code></pre><p>执行mvn idea:idea生成idea环境下工程配置文件</p>
+<h3 id="仓库配置"><a href="#仓库配置" class="headerlink" title="仓库配置"></a>仓库配置</h3><h4 id="Gradle仓库配置"><a href="#Gradle仓库配置" class="headerlink" title="Gradle仓库配置"></a>Gradle仓库配置</h4><pre><code>repositories {
+    mavenLocal()
+    maven {
+        name &apos;uk-nexus&apos;
+        url &quot;http://uk.maven.org/maven2&quot;
+    }
+}
+</code></pre><h4 id="Maven仓库配置"><a href="#Maven仓库配置" class="headerlink" title="Maven仓库配置"></a>Maven仓库配置</h4><pre><code>&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;uk-nexus&lt;/id&gt;
+        &lt;name&gt;uk-nexus Repository&lt;/name&gt;
+        &lt;url&gt;http://uk.maven.org/maven2&lt;/url&gt;
+        &lt;releases&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;/releases&gt;
+        &lt;snapshots&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;/snapshots&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+&lt;pluginRepositories&gt;
+    &lt;pluginRepository&gt;
+        &lt;id&gt;uk-nexus&lt;/id&gt;
+        &lt;name&gt;uk-nexus Repository&lt;/name&gt;
+        &lt;url&gt;http://uk.maven.org/maven2&lt;/url&gt;
+        &lt;releases&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;/releases&gt;
+        &lt;snapshots&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;/snapshots&gt;
+    &lt;/pluginRepository&gt;
+&lt;/pluginRepositories&gt;
+</code></pre><h3 id="依赖配置"><a href="#依赖配置" class="headerlink" title="依赖配置"></a>依赖配置</h3><h4 id="Gradle依赖配置"><a href="#Gradle依赖配置" class="headerlink" title="Gradle依赖配置"></a>Gradle依赖配置</h4><pre><code>// build a map of the dependency artifacts to use.  Allows centralized definition of the version of artifacts to
+// use.  In that respect it serves a role similar to &lt;dependencyManagement&gt; in Maven
+ext {
+    c3p0Version = &apos;0.9.5&apos;
+    slf4jVersion = &apos;1.7.5&apos;
+    persistenceVersion = &apos;1.0.2&apos;
+    javassistVersion = &apos;3.18.1-GA&apos;
+    junitVersion = &apos;4.10&apos;
+    log4j12Version = &apos;1.7.7&apos;
+    h2databaseVersion = &apos;1.4.187&apos;
+    libraries = [
+            c3p0       : &quot;com.mchange:c3p0:${c3p0Version}&quot;,
+            slf4j      : &quot;org.slf4j:slf4j-api:${slf4jVersion}&quot;,
+            persistence: &quot;javax.persistence:persistence-api:${persistenceVersion}&quot;,
+            javassist  : &quot;org.javassist:javassist:${javassistVersion}&quot;,
+            junit      : &quot;junit:junit:${junitVersion}&quot;,
+            log4j12    : &quot;org.slf4j:slf4j-log4j12:${log4j12Version}&quot;,
+            h2database : &quot;com.h2database:h2:${h2databaseVersion}&quot;
+    ]
+}
+
+dependencies {
+    compile libraries.c3p0
+    compile libraries.slf4j
+    compile libraries.persistence
+    compile libraries.javassist
+    testCompile libraries.junit
+    testCompile libraries.log4j12
+    testCompile libraries.h2database
+}
+</code></pre><h4 id="Maven依赖配置"><a href="#Maven依赖配置" class="headerlink" title="Maven依赖配置"></a>Maven依赖配置</h4><pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.mchange&lt;/groupId&gt;
+        &lt;artifactId&gt;c3p0&lt;/artifactId&gt;
+        &lt;version&gt;0.9.5&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+        &lt;version&gt;1.7.5&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax.persistence&lt;/groupId&gt;
+        &lt;artifactId&gt;persistence-api&lt;/artifactId&gt;
+        &lt;version&gt;1.0.2&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.javassist&lt;/groupId&gt;
+        &lt;artifactId&gt;javassist&lt;/artifactId&gt;
+        &lt;version&gt;3.18.1-GA&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;version&gt;4.10&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+        &lt;version&gt;1.7.7&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+        &lt;artifactId&gt;h2&lt;/artifactId&gt;
+        &lt;version&gt;1.4.187&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre><h3 id="编译器版本、编码配置"><a href="#编译器版本、编码配置" class="headerlink" title="编译器版本、编码配置"></a>编译器版本、编码配置</h3><h4 id="Gradle编译器版本、编码配置"><a href="#Gradle编译器版本、编码配置" class="headerlink" title="Gradle编译器版本、编码配置"></a>Gradle编译器版本、编码配置</h4><pre><code>sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+compileJava.options.encoding = &apos;UTF-8&apos;
+compileTestJava.options.encoding = &apos;UTF-8&apos;
+</code></pre><h4 id="Maven编译器版本、编码配置"><a href="#Maven编译器版本、编码配置" class="headerlink" title="Maven编译器版本、编码配置"></a>Maven编译器版本、编码配置</h4><pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+    &lt;version&gt;3.1&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;source&gt;1.6&lt;/source&gt;
+        &lt;target&gt;1.6&lt;/target&gt;
+        &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.6&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre><h3 id="可执行jar入口配置"><a href="#可执行jar入口配置" class="headerlink" title="可执行jar入口配置"></a>可执行jar入口配置</h3><h4 id="Gradle可执行jar入口配置"><a href="#Gradle可执行jar入口配置" class="headerlink" title="Gradle可执行jar入口配置"></a>Gradle可执行jar入口配置</h4><pre><code>mainClassName = &apos;org.fastdb.Application&apos;
+</code></pre><h4 id="Maven可执行jar入口配置"><a href="#Maven可执行jar入口配置" class="headerlink" title="Maven可执行jar入口配置"></a>Maven可执行jar入口配置</h4><pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+    &lt;version&gt;2.4&lt;/version&gt;
+    &lt;configuration&gt;
+        &lt;archive&gt;
+            &lt;manifest&gt;
+                &lt;addClasspath&gt;true&lt;/addClasspath&gt;
+                &lt;classpathPrefix&gt;lib/&lt;/classpathPrefix&gt;
+                &lt;mainClass&gt;org.fastdb.Application&lt;/mainClass&gt;
+            &lt;/manifest&gt;
+        &lt;/archive&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre><h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><blockquote>
+<p>警告: [options] 未与 -source 1.6 一起设置引导类路径</p>
+</blockquote>
+<p>该错误是由于执行gradle命令使用的JDK版本高于build.gradle中设定的sourceCompatibility的版本。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/maven/" rel="tag"># maven</a>
+          
+            <a href="/tags/gradle/" rel="tag"># gradle</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/08/memcached-tutorials/" rel="next" title="memcached tutorials">
+                <i class="fa fa-chevron-left"></i> memcached tutorials
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/28/welcome-to-hexo/" rel="prev" title="Welcome to Hexo">
+                Welcome to Hexo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Guor" />
+          <p class="site-author-name" itemprop="name">Guor</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程配置"><span class="nav-number">1.</span> <span class="nav-text">工程配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradle工程配置"><span class="nav-number">1.1.</span> <span class="nav-text">Gradle工程配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven工程配置"><span class="nav-number">1.2.</span> <span class="nav-text">Maven工程配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库配置"><span class="nav-number">2.</span> <span class="nav-text">仓库配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradle仓库配置"><span class="nav-number">2.1.</span> <span class="nav-text">Gradle仓库配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven仓库配置"><span class="nav-number">2.2.</span> <span class="nav-text">Maven仓库配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖配置"><span class="nav-number">3.</span> <span class="nav-text">依赖配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradle依赖配置"><span class="nav-number">3.1.</span> <span class="nav-text">Gradle依赖配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven依赖配置"><span class="nav-number">3.2.</span> <span class="nav-text">Maven依赖配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译器版本、编码配置"><span class="nav-number">4.</span> <span class="nav-text">编译器版本、编码配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradle编译器版本、编码配置"><span class="nav-number">4.1.</span> <span class="nav-text">Gradle编译器版本、编码配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven编译器版本、编码配置"><span class="nav-number">4.2.</span> <span class="nav-text">Maven编译器版本、编码配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可执行jar入口配置"><span class="nav-number">5.</span> <span class="nav-text">可执行jar入口配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Gradle可执行jar入口配置"><span class="nav-number">5.1.</span> <span class="nav-text">Gradle可执行jar入口配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maven可执行jar入口配置"><span class="nav-number">5.2.</span> <span class="nav-text">Maven可执行jar入口配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-number">6.</span> <span class="nav-text">常见错误</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Guor</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
